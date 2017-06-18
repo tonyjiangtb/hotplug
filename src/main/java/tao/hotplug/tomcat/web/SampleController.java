@@ -36,7 +36,7 @@ public class SampleController {
 	@RequestMapping("/")
 	@ResponseBody
 	public String helloWorld() throws Exception {
-		URL path=ClassLoader.getSystemResource("FilterImpl1.class");
+		URL path=ClassLoader.getSystemResource("Filter1.class");
 		HotLoader loader = new HotLoader(ClassLoader.getSystemClassLoader());
 		Class standard1=loader.loadClass("file:"+path.getPath(), "tao.hotplug.Filter.FilterImpl1");
 		StandardFilter filter1=(StandardFilter) standard1.newInstance();
